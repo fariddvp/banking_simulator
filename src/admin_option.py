@@ -3,7 +3,6 @@ from src.exit_option import ExitOption
 from src.admin_login import AdminLogin
 from src.admin_signup import AdminSignup
 from src.previous_menu import PreviousMenu
-
 import os
 
 class AdminOption(MenuOption):

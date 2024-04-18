@@ -4,6 +4,7 @@ from src.previous_menu import PreviousMenu
 from src.bank_creator import BankCreator
 from src.show_data import ShowData
 from src.branch_creator import BranchCreator
+from src.password_changer import PasswordChanger
 import os
 
 
@@ -15,7 +16,7 @@ class AdminMenu(MenuOption):
             '3': BranchCreator(),
             # '4': UserOption(),
             # '5': ExitOption()
-            # '6': PreviousMenu(),
+            '6': PasswordChanger(),
             '7': PreviousMenu(),
             '8': ExitOption()
         }
