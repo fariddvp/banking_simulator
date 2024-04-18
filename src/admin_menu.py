@@ -1,16 +1,18 @@
 from src.menu_option import MenuOption
 from src.exit_option import ExitOption
 from src.previous_menu import PreviousMenu
-
+from src.bank_creator import BankCreator
+from src.show_data import ShowData
+from src.branch_creator import BranchCreator
 import os
 
 
 class AdminMenu(MenuOption):
     def __init__(self, previous_menu):
         self.options = {
-            # '1': AdminOption(MainMenu),
-            # '2': BankerOption(),
-            # '3': CustomerOption(),
+            '1': ShowData(),
+            '2': BankCreator(),
+            '3': BranchCreator(),
             # '4': UserOption(),
             # '5': ExitOption()
             # '6': PreviousMenu(),
