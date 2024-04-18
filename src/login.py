@@ -28,6 +28,6 @@ def login():
                 admin_menu.select_option()
 
             else:
-                print('\nYour Nationality Code or Password is Invalid.')
+                print('\n*** Warning: Your Nationality Code or Password is Invalid.')
                 input('Enter any Key to Return Admin Option.')
 

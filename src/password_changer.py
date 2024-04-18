@@ -36,9 +36,11 @@ class PasswordChanger(MenuOption):
                     new_admin = f"{admin[0]}#{new_password}#{admin[2]}#{admin[3]}"
                     self.write_admin_password(new_admin)
             else:
-                print('Oops! Your Old Password is Wrong!')
+                print('\n*** Warning: Oops! Your Old Password is Wrong!')
+                input('\nPress any Key for Return to Admin Menu. Please Enter again to System.')
+                return
 
-        input('\nPress any Key for Return to Admin Menu. Please Enter again to System.')
+        input('\nPress any Key for Logout. Please Enter again to System.')
         
         exit()
         

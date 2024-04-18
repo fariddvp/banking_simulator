@@ -4,7 +4,6 @@ from src.branch_saver import BranchSaver
 from src.bank_saver import BankSaver
 import time
 
-
 class BranchCreator(MenuOption):
 
     def execute(self):
@@ -15,12 +14,21 @@ class BranchCreator(MenuOption):
         branch_name = input('Please Enter Branch Name: ')
         branch_id = input('And Enter Branch ID: ')
         bank_name = input('Please Enter Bank Name: ')
-        bank_id = input('And Enter Bank ID: ')
+        # Get Bank ID Automatically
+        for bank in BankSaver.bank_list:
+            if bank.bank_name == bank_name:
+                bank_id = bank.bank_id
+            # if Bank does not exist, so you can not create branch
+            else:
+                print(f'\n*** Warning: Bank with Name: \"{bank_name}\" does not Exist.')
+                input('Press any Key for Return Admin Menu.')
+                return
+
         number_of_customer = 0
         budget = input('Enter Initial Budget: ')
         city_name = input('Enter City Name: ')
         
-        branch = Branch(bank_name, bank_id, bank_name, branch_id, number_of_customer, budget, city_name)
+        branch = Branch(bank_name, bank_id, branch_name, branch_id, number_of_customer, budget, city_name)
         
         BranchSaver.save_branch(branch)
         time.sleep(2)
