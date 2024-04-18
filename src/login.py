@@ -1,6 +1,7 @@
 from src.admin_menu import AdminMenu
 from src.exit_option import ExitOption
 import os
+import time
 
 PATH = '/home/farid/Documents/TAAV_vscode_prj/banking_simulator/src/password.txt'
 
@@ -12,8 +13,8 @@ def login():
     
     # Create Password txt File if does not Exist.
     if not os.path.exists(PATH):
-        print('There is not any Admin in System, please signup first.\n')
-    
+        print('Warning: There is not any Admin in System, please signup first.\n')
+        input('Enter any Key for Return to Admin Option.')
     else:
         with open(PATH, 'r') as r:
             admin = r.read().split('#')
@@ -21,9 +22,12 @@ def login():
             password = input('And Enter Your Password: ')
 
             if nationality_code == admin[0] and password == admin[1]:
-                print(f'Hi, Admin with ID({admin[0]}), Welcome to Admin\'s Panel...\n')
+                print(f'\nHi, Admin with ID({admin[0]}), Welcome to Banking System. Please Wait...\n')
+                time.sleep(3)
                 admin_menu = AdminMenu(ExitOption)
                 admin_menu.select_option()
 
             else:
-                print('Your Nationality Code or Password is Invalid.\n')
+                print('\nYour Nationality Code or Password is Invalid.')
+                input('Enter any Key to Return Admin Option.')
+

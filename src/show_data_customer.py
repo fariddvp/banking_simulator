@@ -6,7 +6,7 @@ class ShowDataCustomer(MenuOption):
 
         nationality_code = input('Please Enter Your Nationality Code: ')
 
-        print('*** Your Banking Information: ')
+        print('\n*** Your Banking Information: ')
         CustomerSaver.print_info(nationality_code)
 
         print('\n')

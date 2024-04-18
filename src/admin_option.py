@@ -16,6 +16,8 @@ class AdminOption(MenuOption):
         
     def select_option(self):
         while True:
+            os.system('clear')
+            
             print('*** Welcome To Admin Options')
             admin_option = input('Please Enter Your Choice:\n'
                                '1- Login\n2- Signup(for first time)\n3- Previous Menu\n4- Exit\n')
