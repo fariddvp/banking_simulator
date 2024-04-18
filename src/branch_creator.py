@@ -1,12 +1,17 @@
 from src.menu_option import MenuOption
 from src.branch import Branch
 from src.branch_saver import BranchSaver
+from src.bank_saver import BankSaver
 import time
 
 
 class BranchCreator(MenuOption):
 
     def execute(self):
+        if len(BankSaver.bank_list) == 0:
+            print('You Don\'t Create any Bank yet. Please Create a Bank First.\n')
+            input('Press any Key to Return Admin Menu.')
+            return
         branch_name = input('Please Enter Branch Name: ')
         branch_id = input('And Enter Branch ID: ')
         bank_name = input('Please Enter Bank Name: ')

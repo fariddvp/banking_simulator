@@ -1,6 +1,7 @@
 from src.exit_option import ExitOption
 from src.admin_option import AdminOption
 from src.menu_option import MenuOption
+from src.customer_option import CustomerOption
 import os
 
 
@@ -9,7 +10,7 @@ class MainMenu(MenuOption):
         self.options = {
             '1': AdminOption(MainMenu),
             # '2': BankerOption(),
-            # '3': CustomerOption(),
+            '3': CustomerOption(MainMenu),
             # '4': UserOption(),
             '5': ExitOption()
         }
