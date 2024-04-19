@@ -49,6 +49,17 @@ class OpeningAccount(MenuOption):
                 account.account_owner = customer.nationality_code
                 
                 CustomerSaver.save_customer(customer)
+                
+                # Update Branch number_of_customers
+                branch_id = ''
+                for customer in Customer.customers_list:
+                    if customer.nationality_code == account.account_owner:
+                        branch_id = customer.branch_id
+
+                for branch in BranchSaver.branch_list:
+                    if branch.branch_id == branch_id:
+                        branch.number_of_customers += 1
+
                 sign = True
                 input('Press any Key for Return to Customer Option')
                 break
