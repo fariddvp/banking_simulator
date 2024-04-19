@@ -1,6 +1,8 @@
 from src.menu_option import MenuOption
 from src.account import Account
 from src.customer_saver import CustomerSaver
+from src.branch_saver import BranchSaver
+from src.customer import Customer
 import os
 
 class Deposit(MenuOption):
@@ -27,6 +29,16 @@ class Deposit(MenuOption):
 
                 
                 account.account_amount += int(amount)
+
+                # Update Branch Budget
+                branch_id = ''
+                for customer in Customer.customers_list:
+                    if customer.nationality_code == account.account_owner:
+                        branch_id = customer.branch_id
+
+                for branch in BranchSaver.branch_list:
+                    if branch.branch_id == branch_id:
+                        branch.budget += int(amount)
                 
                 os.system('clear')
 

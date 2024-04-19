@@ -1,6 +1,8 @@
 from src.menu_option import MenuOption
 from src.account import Account
 from src.customer_saver import CustomerSaver
+from src.branch_saver import BranchSaver
+from src.customer import Customer
 import os
 
 class WithDraw(MenuOption):
@@ -27,11 +29,23 @@ class WithDraw(MenuOption):
 
                 if account.account_amount >= int(amount):
                     account.account_amount -= int(amount)
+
+                    # Update Branch Budget
+                    branch_id = ''
+                    for customer in Customer.customers_list:
+                        if customer.nationality_code == account.account_owner:
+                            branch_id = customer.branch_id
+
+                    for branch in BranchSaver.branch_list:
+                        if branch.branch_id == branch_id:
+                            branch.budget -= int(amount)
                 
                 else:
                     print(f'\n*** Warning: Your Amount is not Enough. '
                           f' You Have \"{account.account_amount}\"$ in \"{account.account_number}\" ')
                     input('Press any Key...')
+
+                
                 
                 os.system('clear')
 
