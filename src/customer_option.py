@@ -5,6 +5,7 @@ from src.opening_account import OpeningAccount
 from src.show_data_customer import ShowDataCustomer
 from src.deposit import Deposit
 from src.with_draw import WithDraw
+from src.loan_requester import LoanRequester
 import os
 
 class CustomerOption(MenuOption):
@@ -12,7 +13,7 @@ class CustomerOption(MenuOption):
         self.options = {
             '1': ShowDataCustomer(),
             '2': OpeningAccount(),
-            # '3': LoanRequest(),
+            '3': LoanRequester(),
             '4': Deposit(),
             '5': WithDraw(),
             '6': PreviousMenu(),

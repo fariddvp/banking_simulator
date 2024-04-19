@@ -1,7 +1,9 @@
 from src.reporter import Reporter
+from src.loan import Loan
 
 class Customer(Reporter):
     customers_list = []
+    
 
     def __init__(self, first_name, last_name, nationality_code, 
                  home_town, account_number, branch_id, loan_number=None):
