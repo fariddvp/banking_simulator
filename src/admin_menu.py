@@ -19,7 +19,7 @@ class AdminMenu(MenuOption):
             # '5': ExitOption()
             '6': PasswordChanger(),
             '7': PreviousMenu(),
-            '8': ExitOption()
+            # '8': ExitOption()
         }
         
     def select_option(self):

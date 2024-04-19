@@ -11,7 +11,7 @@ class AdminOption(MenuOption):
             '1': AdminLogin(),
             '2': AdminSignup(),
             '3': PreviousMenu(),
-            '4': ExitOption()
+            # '4': ExitOption()
         }
         
     def select_option(self):

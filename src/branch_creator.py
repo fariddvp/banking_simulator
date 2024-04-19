@@ -15,11 +15,15 @@ class BranchCreator(MenuOption):
         branch_id = input('And Enter Branch ID: ')
         bank_name = input('Please Enter Bank Name: ')
         # Get Bank ID Automatically
+        flag = False
         for bank in BankSaver.bank_list:
             if bank.bank_name == bank_name:
                 bank_id = bank.bank_id
-            # if Bank does not exist, so you can not create branch
-            else:
+                flag = True
+                break
+        # if Bank does not exist, so you can not create branch
+        else:
+            if flag == False:
                 print(f'\n*** Warning: Bank with Name: \"{bank_name}\" does not Exist.')
                 input('Press any Key for Return Admin Menu.')
                 return

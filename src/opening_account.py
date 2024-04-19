@@ -41,6 +41,7 @@ class OpeningAccount(MenuOption):
         
         branch_id = input('\nEnter Your Desired Branch ID from List: ')
         # Check for Existance of select branch
+        sign = False
         for branch in BranchSaver.branch_list:
             if branch.branch_id == branch_id:
 
@@ -48,14 +49,15 @@ class OpeningAccount(MenuOption):
                 account.account_owner = customer.nationality_code
                 
                 CustomerSaver.save_customer(customer)
-                
+                sign = True
                 input('Press any Key for Return to Customer Option')
                 break
 
-            else:    
+        else:
+            if sign == False:   
                 print('\n*** Warning: Your Branch ID does not Exist in Our System.')
                 input('Press any Key for try again.')
-                self.execute()
+                return
 
         return
 

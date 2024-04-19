@@ -16,7 +16,7 @@ class CustomerOption(MenuOption):
             '4': Deposit(),
             '5': WithDraw(),
             '6': PreviousMenu(),
-            '7': ExitOption()
+            # '7': ExitOption()
         }
         
     def select_option(self):
