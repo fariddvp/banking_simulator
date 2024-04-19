@@ -8,7 +8,7 @@ class CustomerSaver():
     def save_customer(cls, customer):
         cls.customer_list.append(customer)
         print(f'\n*** Congratulations! You Registered in Our System with Nationality Code: {customer.nationality_code}, '
-               f'Account Number: {customer.account_number}\n')
+               f'Account Number: {customer.account_number}')
 
     @classmethod
     def print_info(cls, nationality_code):

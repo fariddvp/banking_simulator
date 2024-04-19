@@ -45,7 +45,7 @@ class OpeningAccount(MenuOption):
             if branch.branch_id == branch_id:
 
                 customer = Customer(first_name, last_name, nationality_code, home_town, account_number, branch_id)
-                account.accoun_owner = customer.nationality_code
+                account.account_owner = customer.nationality_code
                 
                 CustomerSaver.save_customer(customer)
                 
