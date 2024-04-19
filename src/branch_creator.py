@@ -8,7 +8,7 @@ class BranchCreator(MenuOption):
 
     def execute(self):
         if len(BankSaver.bank_list) == 0:
-            print('You Don\'t Create any Bank yet. Please Create a Bank First.\n')
+            print('*** Warning: You Don\'t Create any Bank yet. Please Create a Bank First.\n')
             input('Press any Key to Return Admin Menu.')
             return
         branch_name = input('Please Enter Branch Name: ')

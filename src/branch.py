@@ -17,5 +17,5 @@ class Branch(Bank, Reporter):
     def show_details(self):
         print(f'Branch Name: {self.branch_name}, Branch ID: {self.branch_id}, '
                f'Bank Name: {self.bank_name}, Bank ID: {self.bank_id}, '
-               f'Nnmber of Customer: {self.number_of_customers}, Budget: {self.budget}, '
+               f'Number of Customer: {self.number_of_customers}, Budget: {self.budget}, '
                f'City Name: {self.city_name}')

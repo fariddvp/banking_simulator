@@ -21,7 +21,7 @@ class BranchDeleter(MenuOption):
                     input('Enter any Key for Return to Admin Option.')
                     return
             else:
-                print(f'\n*** Warning: Branch with Name: \"{branch_name}\" and \"{bank_name}\" Does not Exist.')
+                print(f'\n*** Warning: Branch: \"{branch_name}\" from Bank: \"{bank_name}\" Does not Exist.')
                 input('Enter any Key for Return to Admin Option.')
                 return
  
