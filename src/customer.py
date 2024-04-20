@@ -1,12 +1,11 @@
 from src.reporter import Reporter
-from src.loan import Loan
 
 class Customer(Reporter):
     customers_list = []
     
 
     def __init__(self, first_name, last_name, nationality_code, 
-                 home_town, account_number, branch_id, loan_number=None):
+                 home_town, account_number, branch_id, loan_number=[]):
         
         self.first_name = first_name
         self.last_name = last_name
@@ -28,7 +27,7 @@ class Customer(Reporter):
                 f'Account Number: {self.account_number}, '
                 f'Loan Number: {self.loan_number}')
 
-    def loan_request(nationality_code, account_number, loan_amount):
+    def loan_request(self, nationality_code, account_number, loan_amount):
         pass
 
     def deposit():
@@ -36,3 +35,4 @@ class Customer(Reporter):
 
     def with_draw():
         pass
+

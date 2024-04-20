@@ -3,6 +3,7 @@ from src.bank_saver import BankSaver
 from src.branch_saver import BranchSaver
 from src.customer_saver import CustomerSaver
 from src.show_data_customer import ShowDataCustomer
+from src.loan import Loan
 
 class ShowData(MenuOption):
     def execute(self):
@@ -24,6 +25,12 @@ class ShowData(MenuOption):
         # Print Customers with national_codes    
         for code in nationality_codes:
             CustomerSaver.print_info(code)
+
+
+        print('\n')
+
+        print('*** Your Loans: ')
+        Loan.show_info()
         
         
         input("\nPress Enter to continue...")

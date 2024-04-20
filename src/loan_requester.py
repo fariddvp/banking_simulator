@@ -4,6 +4,7 @@ from src.account import Account
 from src.customer import Customer
 from src.check_budget_for_loan import check_budget_for_loan
 from src.loan import Loan
+from src.generate_loan_number import generate_loan_number
 import os
 
 class LoanRequester(MenuOption):
@@ -32,13 +33,26 @@ class LoanRequester(MenuOption):
                 
                 flag = True
                 if check_budget_for_loan(account_number, loan_amount):
-                    Customer.loan_request(account.account_owner, account.account_number, loan_amount)
+                    # Customer.loan_request(account.account_owner, account.account_number, loan_amount)
+                    loan_number = generate_loan_number()
+                    
+                    branch_id = ''
+                    for customer in Customer.customers_list:
+                        if customer.account_number == account_number:
+                            branch_id = customer.branch_id
+                    
+                    loan = Loan(loan_number, loan_amount, nationality_code, account_number, branch_id)
+
+                    for customer in Customer.customers_list:
+                        if customer.nationality_code == nationality_code:
+                            customer.loan_number.append(loan_number)
+
                     print('\n*** Congratulations! Your Loan Request Accepted.')
                     input('Press Any Key to Return to Customer Option.')
                     return
                 
                 else:
-                    print('\n*** Warning: Your Loan Request Rejected.')
+                    print('\n*** Warning: Your Loan Request Rejected. You Can Raise Your Amount and Try again.')
                     input('Press Any Key to Return to Customer Option.')
                     return
                 

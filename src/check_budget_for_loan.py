@@ -19,5 +19,6 @@ def check_budget_for_loan(account_number, loan_amount):
         if branch.branch_id == branch_id:
             if ((branch.budget * 0.25) >= int(loan_amount)) and (customer_account_amount >= (int(loan_amount) * 0.5)):
                 branch.budget -= int(loan_amount)
+                return True
 
-    return True                        
+    return False                        
