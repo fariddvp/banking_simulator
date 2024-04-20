@@ -6,11 +6,7 @@ import time
 PATH = '/home/farid/Documents/TAAV_vscode_prj/banking_simulator/src/password.txt'
 
 # Login Admin to System Banking
-def login():
-    '''
-    this function check for login Admin to banking system.
-    '''
-    
+def login():    
     # Create Password txt File if does not Exist.
     if not os.path.exists(PATH):
         print('Warning: There is not any Admin in System, please signup first.\n')

@@ -4,9 +4,6 @@ import os
 PATH = '/home/farid/Documents/TAAV_vscode_prj/banking_simulator/src/password.txt'
 
 def signup():
-    '''
-    this function check for signup Admin to banking system.
-    '''
     first_name = input('Please Enter Your First Name: ')
     last_name = input('Please Enter Your Last Name: ')
     nationality_code = input('Please Enter Your Nationality Code: ')
