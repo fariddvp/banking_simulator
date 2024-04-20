@@ -40,12 +40,14 @@ class LoanRequester(MenuOption):
                     for customer in Customer.customers_list:
                         if customer.account_number == account_number:
                             branch_id = customer.branch_id
-                            # Update loan number
+                            
+                            # Add Condition: every customer can giving only one loan from every branch
                             for loan in Loan.loan_list:
                                 if loan.branch_id == branch_id and loan.customer_id == nationality_code:
                                     print('\n*** Unfortunately! Your Loan Request Reject. You Have a Loan in Our Branch.')
                                     input('Press Any Key to Return to Customer Option.')
                                     return
+                            # Update loan number
                             customer.loan_number.append(loan_number)
 
 
