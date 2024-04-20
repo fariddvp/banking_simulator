@@ -1,6 +1,6 @@
 from src.menu_option import MenuOption
 
-PATH = '/home/farid/Documents/TAAV_vscode_prj/banking_simulator/src/password.txt'
+PATH = '/home/farid/Documents/BankingSystemFinal/banking_simulator/src/password.txt'
 
 class PasswordChanger(MenuOption):
 

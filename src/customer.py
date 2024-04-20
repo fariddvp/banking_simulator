@@ -27,8 +27,6 @@ class Customer(Reporter):
                 f'Branch ID: {self.branch_id}, '
                 f'Account Number: {self.account_number}, '
                 f'Loan Number: {self.loan_number}')
-                
-            
 
     def loan_request(nationality_code, account_number, loan_amount):
         pass

@@ -14,6 +14,23 @@ class Admin(User, Security):
     def password(self):
         return self._password
     
+    def show_data():
+        pass
+    
+    def delete_branch():
+        pass
+
+    def create_bank():
+        pass
+
+    def create_branch():
+        pass
+
+    def change_password():
+        pass
+    
+    
+    
 
 
 

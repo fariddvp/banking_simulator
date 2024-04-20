@@ -10,7 +10,7 @@ class AdminManager:
         nationality_code = input('Please Enter Your Nationality Code: ')
 
         if not self._validate_nationality_code(nationality_code):
-            print('\nWarning: Your Nationality Code is invalid. National Code is 8-Digits.')
+            print('\n*** Warning: Your Nationality Code is invalid. National Code is 8-Digits.')
             input('Press any Key for Try Again.\n')
             return
 
@@ -20,7 +20,7 @@ class AdminManager:
         admin.set_password(password)
         self.data_repository.create_admin(admin)
 
-        print(f'\nYou Registered as Admin with Nationality Code: {nationality_code}\n')
+        print(f'\n*** You Registered as Admin with Nationality Code: {nationality_code}\n')
 
     def _validate_nationality_code(self, code):
         return code.isdigit() and len(code) == 10
