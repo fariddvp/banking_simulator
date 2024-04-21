@@ -6,6 +6,7 @@ from src.show_data import ShowData
 from src.branch_creator import BranchCreator
 from src.password_changer import PasswordChanger
 from src.branch_deleter import BranchDeleter
+from src.budget_raiser import BudgetRaiser
 import os
 
 
@@ -16,7 +17,7 @@ class AdminMenu(MenuOption):
             '2': BankCreator(),
             '3': BranchCreator(),
             '4': BranchDeleter(),
-            # '5': ExitOption()
+            '5': BudgetRaiser(),
             '6': PasswordChanger(),
             '7': PreviousMenu(),
             # '8': ExitOption()

@@ -28,6 +28,9 @@ class Admin(User, Security):
 
     def change_password():
         pass
+
+    def raise_budget():
+        pass
     
     
     

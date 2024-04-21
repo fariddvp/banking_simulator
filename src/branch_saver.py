@@ -4,7 +4,7 @@ class BranchSaver():
     @classmethod
     def save_branch(cls, branch):
         cls.branch_list.append(branch)
-        print('Your Branch Successfully Added.')
+        print('\n*** OK! Your Branch Successfully Added.')
 
     @classmethod
     def print_info(cls):

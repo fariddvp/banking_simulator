@@ -4,7 +4,7 @@ class BankSaver():
     @classmethod
     def save_bank(cls, bank):
         cls.bank_list.append(bank)
-        print('Your Bank Successfully Added.')
+        print('\n*** OK! Your Bank Successfully Added.')
 
     @classmethod
     def print_info(cls):
