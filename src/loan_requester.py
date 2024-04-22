@@ -18,8 +18,8 @@ class LoanRequester(MenuOption):
         print('\n*** Information of Your Bank Accounts:\n')
         CustomerSaver.print_info(nationality_code)
 
-        account_number = input('Please Enter Your Desired Account Number for Loan: ')
-
+        account_number = input('Please Enter Your Desired Account Number for Loan: ')      
+        
         flag = False
         for account in Account.account_list:
             if account.account_number == account_number:
@@ -49,7 +49,6 @@ class LoanRequester(MenuOption):
                                     return
                             # Update loan number
                             customer.loan_number.append(loan_number)
-
 
                     Loan(loan_number, loan_amount, nationality_code, account_number, branch_id)
 

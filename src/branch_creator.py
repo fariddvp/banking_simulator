@@ -29,7 +29,19 @@ class BranchCreator(MenuOption):
                 return
 
         number_of_customer = 0
-        budget = int(input('Enter Initial Budget: '))
+        budget = input('Enter Initial Budget: ')
+        if budget.isdecimal():
+            budget = int(budget)
+            if budget < 0:
+                print('\n*** Warning: Your Budget Amount is Invalid.')
+                input('Press any Key for Return Admin Menu.')
+                return 
+
+        else:
+            print('\n*** Warning: Your Budget Amount is Invalid.')
+            input('Press any Key for Return Admin Menu.')
+            return    
+        
         city_name = input('Enter City Name: ')
         
         branch = Branch(bank_name, bank_id, branch_name, branch_id, number_of_customer, budget, city_name)

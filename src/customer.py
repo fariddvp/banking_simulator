@@ -5,14 +5,14 @@ class Customer(Reporter):
     
 
     def __init__(self, first_name, last_name, nationality_code, 
-                 home_town, account_number, branch_id, loan_number=[]):
+                 home_town, account_number, branch_id):
         
         self.first_name = first_name
         self.last_name = last_name
         self.nationality_code = nationality_code
         self.home_town = home_town
         self.account_number = account_number
-        self.loan_number = loan_number
+        self.loan_number = []
         self.branch_id = branch_id
         Customer.customers_list.append(self)
 
@@ -27,7 +27,7 @@ class Customer(Reporter):
                 f'Account Number: {self.account_number}, '
                 f'Loan Number: {self.loan_number}')
 
-    def loan_request(self, nationality_code, account_number, loan_amount):
+    def loan_request():
         pass
 
     def deposit():
