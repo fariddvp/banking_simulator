@@ -1,5 +1,6 @@
 from src.menu_option import MenuOption
 from src.branch_saver import BranchSaver
+import os
 
 class BudgetRaiser(MenuOption):
     def execute(self):
@@ -15,6 +16,7 @@ class BudgetRaiser(MenuOption):
                 amount = input(f'And Enter Your Budget Amount for Raise Budget of Branch ID \"{branch_id}\": ')
                 if amount.isdigit():
                     branch.budget += int(amount)
+                    os.system('clear')
                     print('\n*** OK! Your Command Applied and Updated Branch.\n')
                     BranchSaver.print_info()
                     input('Press any Key for Return.')

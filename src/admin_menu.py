@@ -31,7 +31,7 @@ class AdminMenu(MenuOption):
             admin_menu = input('Please Enter Your Option:\n'
                                '1- Show Data\n2- Create Bank\n'
                                '3- Create Branch\n4- Delete Branch\n'
-                               '5- Determine Budget\n6- Change Password\n'
+                               '5- Raise Budget\n6- Change Password\n'
                                '7- Previous Menu\n8- Exit\n')
             
             os.system('clear')
